@@ -1,2 +1,2 @@
-xây dưng thành công cơ sở dữ liệu của trang web
-nghiên cứu và xây dựng web site
+xây dưng thành công cơ sở dữ liệu của trang webstie bán quần áo
+nghiên cứu và xây dựng website bán quần áo
