@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="menfashionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="shortDescription" Type="nvarchar" MaxLength="2000" />
+    <Property Name="image" Type="nvarchar" MaxLength="2000" />
+    <Property Name="publicDate" Type="datetime" />
+    <Property Name="content" Type="nvarchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateContact" Type="datetime" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Invoince">
+    <Key>
+      <PropertyRef Name="invoinceNo" />
+    </Key>
+    <Property Name="invoinceNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateOrder" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="deliveryStatus" Type="bit" />
+    <Property Name="deliveryDate" Type="datetime" />
+    <Property Name="totalMoney" Type="int" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" />
+    <Property Name="customerId" Type="int" />
+  </EntityType>
+  <EntityType Name="InvoinceDetail">
+    <Key>
+      <PropertyRef Name="invoinceNo" />
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="invoinceNo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="productId" Type="int" Nullable="false" />
+    <Property Name="quanlityProduct" Type="int" />
+    <Property Name="unitPrice" Type="int" />
+    <Property Name="totalPrice" Type="int" />
+    <Property Name="totalDiscount" Type="int" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="250" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="250" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="date" />
+    <Property Name="gender" Type="bit" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="RegisteredDate" Type="datetime" />
+    <Property Name="address" Type="nvarchar" MaxLength="250" />
+    <Property Name="avatar" Type="nvarchar" MaxLength="2000" />
+    <Property Name="status" Type="bit" />
+    <Property Name="roleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="productId" />
+    </Key>
+    <Property Name="productId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="2000" />
+    <Property Name="price" Type="int" />
+    <Property Name="discount" Type="int" />
+    <Property Name="description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="quanlity" Type="int" />
+    <Property Name="brand" Type="nvarchar" MaxLength="250" />
+    <Property Name="dateCreate" Type="datetime" />
+    <Property Name="status" Type="bit" />
+    <Property Name="categoryId" Type="int" Nullable="false" />
+    <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="roleId" />
+    </Key>
+    <Property Name="roleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="130" />
+  </EntityType>
+  <EntityType Name="Slide">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateCreate" Type="datetime" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="250" />
+    <Property Name="url" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="menfashionModelStoreContainer">
+    <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoince" EntityType="Self.Invoince" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoinceDetail" EntityType="Self.InvoinceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slide" EntityType="Self.Slide" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

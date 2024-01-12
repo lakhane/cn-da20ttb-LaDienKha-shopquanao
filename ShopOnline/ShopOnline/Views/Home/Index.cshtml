@@ -1,0 +1,271 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPublicPage.cshtml";
+}
+    @if (TempData["msgChangePassword"] != null)
+     {
+        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                @TempData["msgChangePassword"]
+         </div>
+     }    
+    @if (TempData["msgChangePasswordFailed"] != null)
+     {
+            <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                @TempData["msgChangePasswordFailed"]
+            </div>
+     }
+    @if (TempData["msgEditProfieFailed"] != null)
+     {
+            <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                @TempData["msgEditProfieFailed"]
+            </div>
+     }
+    @if (TempData["msgDeleteOrder"] != null)
+     {
+        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+                @TempData["msgDeleteOrder"]
+         </div>
+     }
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        <div class="hero__items set-bg" data-setbg=@Url.Content("~/Content/img/hero/hero-1x.jpg")>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                           <h6>Bộ sưu tập mùa hè</h6>
+                             <h2>Bộ sưu tập Thu - Đông 2030</h2>
+                             <p>
+                                 Một nhãn hiệu chuyên nghiệp tạo ra những thứ thiết yếu sang trọng. Được tạo ra một cách có đạo đức với một sự kiên định
+                                 cam kết chất lượng vượt trội.
+                             </p>
+                            <a href="~/Shop/ProductList" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <div class="hero__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__items set-bg" data-setbg=@Url.Content("~/Content/img/hero/hero-2x.jpg")>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-7 col-md-8">
+                        <div class="hero__text">
+                            <h6>Bộ sưu tập mùa hè</h6>
+                             <h2>Bộ sưu tập Thu - Đông 2030</h2>
+                             <p>
+                                 Một nhãn hiệu chuyên nghiệp tạo ra những thứ thiết yếu sang trọng. Được tạo ra một cách có đạo đức với một sự kiên định
+                                 cam kết chất lượng vượt trội.
+                             </p>
+                            <a href="~/Shop/ProductList" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <div class="hero__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Section End -->
+<!-- Banner Section Begin -->
+<section class="banner spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-4">
+                <div class="banner__item">
+                    <div class="banner__item__pic">
+                        <img src="~/Content/img/banner/banner-1.jpg" alt="">
+                    </div>
+                    <div class="banner__item__text">
+                      <h2>Bộ sưu tập quần áo 2030</h2>
+                         <a href="~/Shop/ProductList">Mua ngay</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-5">
+                 <div class="banner__item banner__item--middle">
+                     <div class="banner__item__pic">
+                         <img src="~/Content/img/banner/banner-2.jpg" alt="">
+                     </div>
+                     <div class="banner__item__text">
+                         <h2>Phụ kiện</h2>
+                         <a href="~/Shop/ProductList">Mua ngay</a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-7">
+                 <div class="banner__item banner__item--last">
+                     <div class="banner__item__pic">
+                         <img src="~/Content/img/banner/banner-3.jpg" alt="">
+                     </div>
+                     <div class="banner__item__text">
+                         <h2>Giày Xuân 2030</h2>
+                         <a href="~/Shop/ProductList">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="categories spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="categories__text">
+                    <h2>Bộ sưu tập giày <br /> <span>Quần áo Hot</span> <br /> Phụ kiện</h2>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="categories__hot__deal">
+                    <img src="~/Content/img/tomyxanh.jpg" alt="">
+                    <div class="hot__deal__sticker">
+                        <span>Giảm giá 15%</span>
+                        <h5>43 $</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="categories__deal__countdown">
+                    <span>Ưu đãi của tuần</span>
+                    <h2>Dày dặn phù hợp vào mua Đông </h2>
+                    
+                    <a href="~/Shop/ProductList" class="primary-btn">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Section End -->
+<!-- Product Section Begin -->
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="filter__controls">
+                    <li class="active" data-filter="*">Sách bán chạy nhất</li>
+                    <li data-filter=".new-arrivals">Hàng mới về</li>
+                    <li data-filter=".hot-sales">Giảm giá hấp dẫn</li>
+
+                </ul>
+            </div>
+        </div>
+        @Html.Action("ProductHome", "Home")
+    </div>
+</section>
+<!-- Product Section End -->
+<!-- Categories Section Begin -->
+<section class="categories spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="categories__text">
+                    <h2>Quần áo Hot <br /> <span>Phụ kiện</span> <br /> Bộ sưu tập giày</h2>
+                 </div>
+             </div>
+             <div class="col-lg-4">
+                 <div class="categories__hot__deal">
+                     <img src="~/Content/img/product-sale.png" alt="">
+                     <div class="hot__deal__sticker">
+                         <span>Bán</span>
+                         <h5>29,99$</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="categories__deal__countdown">
+                    <span>Ưu đãi của tuần</span>
+                     <h2>Túi đeo ngực </h2>
+                     <div class="categories__deal__countdown__timer" id="countdown">
+                         <div class="cd-item">
+                             <span>3</span>
+                             <p>Ngày</p>
+                         </div>
+                         <div class="cd-item">
+                             <span>1</span>
+                             <p>Giờ</p>
+                         </div>
+                         <div class="cd-item">
+                             <span>50</span>
+                             <p>Phút</p>
+                         </div>
+                         <div class="cd-item">
+                             <span>18</span>
+                             <p>Giây</p>
+                         </div>
+                     </div>
+                     <a href="~/Shop/ProductList" class="primary-btn">Mua ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section End -->
+<!-- Instagram Section Begin -->
+<section class="instagram spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="instagram__pic">
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-1.jpg")></div>
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-2.jpg")></div>
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-3.jpg")></div>
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-4.jpg")></div>
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-5.jpg")></div>
+                    <div class="instagram__pic__item set-bg" data-setbg=@Url.Content("~/Content/img/instagram/instagram-6.jpg")></div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="instagram__text">
+                   <h2>Instagram</h2>
+                     <p>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                         Laboure et dolore magna aliqua.
+                     </p>
+                     <h3>#Thời_trang_nam</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Instagram Section End -->
+<!-- Latest Blog Section Begin -->
+<section class="latest spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <span>Tin mới nhất</span>
+                    <h2 style=" position: relative; left: 58px;">Thời Trang Xu Hướng Mới <span style="display: inline; position: relative; left: 288px;"><a href="~/Article/ArticleList" style=" color: black;">Read All</a></span></h2>
+                </div>
+            </div>
+        </div>
+        @Html.Action("BlogHome", "Home")
+    </div>
+</section>
+<!-- Latest Blog Section End -->

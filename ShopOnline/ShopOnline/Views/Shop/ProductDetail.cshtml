@@ -1,0 +1,293 @@
+﻿
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_LayoutPublicPage.cshtml";
+}
+@model ShopOnline.Models.Product
+
+<script>
+    var obj = document.querySelector(".navlist li:nth-child(1)");
+    obj.classList.remove("active");
+</script>
+<!-- Shop Details Section Begin -->
+<section class="shop-details">
+    <div class="product__details__pic">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__breadcrumb">
+                     <a href="~/Home/Index">Trang chủ</a>
+                         <a href="./shop.html">Cửa hàng</a>
+                         <span>Chi tiết sản phẩm</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
+                                <div class="product__thumb__pic set-bg" data-setbg=@Url.Content(""+@Model.image)>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                <div class="product__thumb__pic set-bg" data-setbg=@Url.Content(""+@Model.image)>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                <div class="product__thumb__pic set-bg" data-setbg=@Url.Content(""+@Model.image)>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
+                                <div class="product__thumb__pic set-bg" data-setbg=@Url.Content("~/Content/img/shop-details/thumb-4.png")>
+                                    <i class="fa fa-play"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src=@Url.Content(""+@Model.image) alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src=@Url.Content(""+@Model.image) alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-3" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src=@Url.Content(""+@Model.image) alt="">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-4" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img src="~/Content/img/shop-details/product-big-4.png" alt="">
+                                <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product__details__content">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product__details__text">
+                        <h4>@Model.productName</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span> - 5 Reviews</span>
+                        </div>
+                        <h3>$@ViewBag.NewPrice <span>$@Model.price</span> <div><p style="font-size: 23px; color: red; }">Save @Model.discount%</p></div></h3>
+                        <p>
+                            @Model.description
+                        </p>
+                        <div class="product__details__option">
+                            <div class="product__details__option__size">
+                                <span>Size:</span>
+                                <label for="xxl">
+                                    xxl
+                                    <input type="radio" id="xxl">
+                                </label>
+                                <label class="active" for="xl">
+                                    xl
+                                    <input type="radio" id="xl">
+                                </label>
+                                <label for="l">
+                                    l
+                                    <input type="radio" id="l">
+                                </label>
+                                <label for="sm">
+                                    s
+                                    <input type="radio" id="sm">
+                                </label>
+                            </div>
+                            <div class="product__details__option__color">
+                                <span>Color:</span>
+                                <label class="c-1" for="sp-1">
+                                    <input type="radio" id="sp-1">
+                                </label>
+                                <label class="c-2" for="sp-2">
+                                    <input type="radio" id="sp-2">
+                                </label>
+                                <label class="c-3" for="sp-3">
+                                    <input type="radio" id="sp-3">
+                                </label>
+                                <label class="c-4" for="sp-4">
+                                    <input type="radio" id="sp-4">
+                                </label>
+                                <label class="c-9" for="sp-9">
+                                    <input type="radio" id="sp-9">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="product__details__cart__option">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                            <a href="@Url.Action("AddToCart","Cart", new { id = Model.productId, @strURL = Request.Url.ToString() })" class="primary-btn">add to cart</a>
+                        </div>
+                    <div class="product__details__btns__option">
+                             <a href="#"><i class="fa fa-heart"></i> thêm vào danh sách yêu thích</a>
+                             <a href="#"><i class="fa fa-exchange"></i> Thêm vào để so sánh</a>
+                         </div>
+                         <div class="product__details__last__option">
+                             <h5><span>Thanh toán an toàn được đảm bảo</span></h5>
+                             <img src="~/Content/img/shop-details/details-payment.png" alt="">
+                             <ul>
+                                 <li><span>SKU:</span> 3812912</li>
+                                 <li><span>Danh mục:</span> Quần áo</li>
+                                 <li><span>Thẻ:</span> Quần áo, Làn da, Cơ thể</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                               <a class="nav-link active" data-toggle="tab" href="#tabs-5"
+                                    role="tab">Mô tả</a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">
+                                     Khách hàng
+                                     Bản xem trước(5)
+                                 </a>
+                             </li>
+                             <li class="nav-item">
+                                 <a class="nav-link" data-toggle="tab" href="#tabs-7" role="tab">
+                                     Thêm vào
+                                     thông tin
+                                 </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-5" role="tabpanel">
+                                <div class="product__details__tab__content">
+                                    <div class="product__details__tab__content__item">
+                                        @Html.Raw(Model.description)
+                                    </div>
+                                    <div class="product__details__tab__content__item">
+                                        <h5>Vật liệu sử dụng</h5>
+                                         <p>
+                                             Polyester được coi là chất lượng thấp hơn do chất lượng không tự nhiên của nó. Làm ra
+                                             từ vật liệu tổng hợp, không tự nhiên như len. Bộ quần áo polyester trở thành
+                                             dễ bị nhàu và được biết đến là không thoáng khí. bộ quần áo polyester
+                                             có xu hướng tỏa sáng hơn so với bộ đồ len và bông, điều này có thể
+                                             làm cho bộ đồ trông rẻ tiền. Kết cấu của nhung là sang trọng và
+                                             thoáng khí. Nhung là sự lựa chọn tuyệt vời cho áo khoác dự tiệc tối và có thể
+                                             đeo quanh năm.
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="tab-pane" id="tabs-6" role="tabpanel">
+                                 <div class="product__details__tab__content">
+                                     <div class="product__details__tab__content__item">
+                                         <h5>Thông tin sản phẩm</h5>
+                                         <p>
+                                             Máy tính bỏ túi là một máy tính cầm tay, có nhiều tính năng giống nhau
+                                             khả năng như một PC hiện đại. Những thiết bị nhỏ tiện dụng này cho phép
+                                             cá nhân để truy xuất và lưu trữ thông điệp e-mail, tạo một liên hệ
+                                             tập tin, điều phối các cuộc hẹn, lướt internet, trao đổi tin nhắn văn bản
+                                             và hơn thế nữa. Mỗi sản phẩm được dán nhãn là Pocket PC phải được
+                                             đi kèm với phần mềm cụ thể để vận hành thiết bị và phải có tính năng
+                                             một màn hình cảm ứng và bàn di chuột.
+                                         </p>
+                                         <p>
+                                             Như trường hợp của bất kỳ sản phẩm công nghệ mới nào, chi phí của một chiếc Pocket PC
+                                             là đáng kể trong thời gian đầu phát hành. Với khoảng $700,00,
+                                             người tiêu dùng có thể mua một trong những chiếc Pocket PC hàng đầu vào năm 2003.
+                                             Ngày nay, khách hàng nhận thấy rằng giá đã trở nên cao hơn nhiều
+                                             hợp lý bây giờ khi sự mới mẻ đang biến mất. cho khoảng
+                                             $350,00, bạn có thể mua một chiếc Pocket PC mới.
+                                         </p>
+                                     </div>
+                                     <div class="product__details__tab__content__item">
+                                         <h5>Vật liệu sử dụng</h5>
+                                         <p>
+                                             Polyester được coi là chất lượng thấp hơn do chất lượng không tự nhiên của nó. Làm ra
+                                             từ vật liệu tổng hợp, không tự nhiên như len. Bộ quần áo polyester trở thành
+                                             dễ bị nhàu và được biết đến là không thoáng khí. bộ quần áo polyester
+                                             có xu hướng tỏa sáng hơn so với bộ đồ len và bông, điều này có thể
+                                             làm cho bộ đồ trông rẻ tiền. Kết cấu của nhung là sang trọng và
+                                             thoáng khí. Nhung là sự lựa chọn tuyệt vời cho áo khoác dự tiệc tối và có thể
+                                             đeo quanh năm.
+                                         </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-7" role="tabpanel">
+                                <div class="product__details__tab__content">
+                                    <p class="ghi chú">
+                                         Nam tempus turpis at metus scelerisque placerat nulla deumantos
+                                         yêu cầu felis. Pellentesque diam dolor, elementum etos lobortis des mollis
+                                         rất nguy hiểm. Sedcus faucibus an sullamcorper mattis drostique des commodo
+                                         pharetra loremos.
+                                     </p>
+                                     <div class="product__details__tab__content__item">
+                                         <h5>Thông tin sản phẩm</h5>
+                                         <p>
+                                             Máy tính bỏ túi là một máy tính cầm tay, có nhiều tính năng giống nhau
+                                             khả năng như một PC hiện đại. Những thiết bị nhỏ tiện dụng này cho phép
+                                             cá nhân để truy xuất và lưu trữ thông điệp e-mail, tạo một liên hệ
+                                             tập tin, điều phối các cuộc hẹn, lướt internet, trao đổi tin nhắn văn bản
+                                             và hơn thế nữa. Mỗi sản phẩm được dán nhãn là Pocket PC phải được
+                                             đi kèm với phần mềm cụ thể để vận hành thiết bị và phải có tính năng
+                                             một màn hình cảm ứng và bàn di chuột.
+                                         </p>
+                                         <p>
+                                             Như trường hợp của bất kỳ sản phẩm công nghệ mới nào, chi phí của một chiếc Pocket PC
+                                             là đáng kể trong thời gian đầu phát hành. Với khoảng $700,00,
+                                             người tiêu dùng có thể mua một trong những chiếc Pocket PC hàng đầu vào năm 2003.
+                                             Ngày nay, khách hàng nhận thấy rằng giá đã trở nên cao hơn nhiều
+                                             hợp lý bây giờ khi sự mới mẻ đang biến mất. cho khoảng
+                                             $350,00, bạn có thể mua một chiếc Pocket PC mới.
+                                         </p>
+                                     </div>
+                                     <div class="product__details__tab__content__item">
+                                         <h5>Vật liệu sử dụng</h5>
+                                         <p>
+                                             Polyester được coi là chất lượng thấp hơn do chất lượng không tự nhiên của nó. Làm ra
+                                             từ vật liệu tổng hợp, không tự nhiên như len. Bộ quần áo polyester trở thành
+                                             dễ bị nhàu và được biết đến là không thoáng khí. bộ quần áo polyester
+                                             có xu hướng tỏa sáng hơn so với bộ đồ len và bông, điều này có thể
+                                             làm cho bộ đồ trông rẻ tiền. Kết cấu của nhung là sang trọng và
+                                             thoáng khí. Nhung là sự lựa chọn tuyệt vời cho áo khoác dự tiệc tối và có thể
+                                             đeo quanh năm.
+                                         </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Shop Details Section End -->
+<!-- Related Section Begin -->
+    @Html.Action("RelationProduct","Shop")
+<!-- Related Section End -->
